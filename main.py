@@ -1,12 +1,11 @@
 from models.book import Book
+from models.member import Member
+
 
 book1 = Book("Python Programming", "Dennis Ritchie", 30, 5)
 
-book1.show_info()
+member1 = Member("Alice", "alice@gmail.com")
 
-book1.borrow()
-book1.show_info()
+member1.borrowed_books.append(book1)
 
-book1.return_book()
-book1.show_info()
-
+member1.show_info()
