@@ -1,9 +1,10 @@
-class Member:
+from models.person import Person
+
+class Member(Person):
 
     def __init__(self, name, email):
-        self.name = name
-        self.email = email
-        self.borrowed_books = []
+        super().__init__(name, email)
+        self._borrowed_books = []
 
     def show_info(self):
         print("\nMember Information")
@@ -12,8 +13,14 @@ class Member:
 
         print("Borrowed Books:")
 
-        if not self.borrowed_books:
+        if not self._borrowed_books:
             print("None")
         else:
-            for book in self.borrowed_books:
+            for book in self._borrowed_books:
                 print(book.title)
+
+    def borrow_book(self, book):
+        self._borrowed_books.append(book)
+
+    def return_book(self, book):
+        self._borrowed_books.remove(book)            

@@ -18,6 +18,13 @@ library.add_book(book2)
 library.register_member(member1)
 library.register_member(member2)
 
+library.borrow_book(member1, book1)
+
+print("\nAfter Borrowing:")
+library.display_books()
+
+print("\nMember Details:")
+member1.show_info()
 
 library.display_books()
 
